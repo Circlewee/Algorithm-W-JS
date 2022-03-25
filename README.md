@@ -1,1 +1,1 @@
-# Algorithm-w-JS
+# Algorithm-W-JS
