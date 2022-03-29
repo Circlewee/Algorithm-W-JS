@@ -1,6 +1,5 @@
 # Algorithm-W-JS
 
----
 
 ### 문제 출처
 
