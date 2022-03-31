@@ -6,19 +6,23 @@ const input = require('fs')
   .toString()
   .split('\n');
 
-const arr = input.filter((e) => e !== '0'); // 개행문자 포함
-let result = '';
-let palindrome = '';
+const arr = input.filter((e) => e !== '0');
 
 arr.forEach((e) => {
-  const str = e.slice(0, -1);
-
-  for (let i = str.length - 1; i >= 0; i--) {
-    palindrome += str.charAt(i);
-  }
-
-  result += str === palindrome ? 'yes\n' : 'no\n';
-  palindrome = '';
+  let reverse = e.split('').reverse().join('');
+  console.log(reverse.trim() === e.trim() ? 'yes' : 'no');
 });
 
-console.log(result.slice(0, -1));
+// vscode 환경에선 오히려 아래 결과가 no no no가 나온다. 그런데 백준에선 아래만 정답
+const input2 = require('fs')
+  .readFileSync('baekjoon/1000~/1259.txt')
+  .toString()
+  .trim()
+  .split('\n');
+
+const arr2 = input2.filter((e) => e !== '0');
+
+arr2.forEach((e) => {
+  let reverse = e.split('').reverse().join('');
+  console.log(reverse === e ? 'yes' : 'no'); //  reverse == "\r" + somthing", e == "somthing" + "\r"
+});
